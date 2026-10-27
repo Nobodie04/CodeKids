@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pelajaran | CodeKids Academy</title>
+    <meta name="description" content="Materi coding interaktif, latihan problem solving, dan mini challenge CodeKids." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="pelajaran.css" />
+  </head>
+  <body>
+    <header class="lesson-header">
+      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+        <a class="brand" href="halaman.html"><span class="brand-mark">C</span><span>CodeKids</span></a>
+        <nav class="lesson-nav-breadcrumbs" id="headerNavBtns">
+          <button class="nav-btn-back" id="backToLevelBtn" type="button">🎯 Ganti Level</button>
+          <button class="nav-btn-back" id="backToLanguageBtn" type="button">💻 Ganti Bahasa</button>
+        </nav>
+      </div>
+      <a class="back-link" href="akun.html">Profil Saya</a>
+    </header>
+
+    <main>
+      <section class="level-gate" id="levelGate">
+        <div class="level-gate-copy">
+          <span class="eyebrow">CodeKids pathway</span>
+          <h1>Pilih level belajarmu</h1>
+          <p>Mulai dari level yang sesuai. Materi akan muncul setelah kamu memilih jalur belajar.</p>
+        </div>
+        <div class="level-choice-grid">
+          <button class="level-choice active" data-level="beginner" type="button"><span class="level-icon">1</span><span><strong>Beginner</strong><small>Mulai dari dasar</small></span></button>
+          <button class="level-choice" data-level="explorer" type="button"><span class="level-icon">2</span><span><strong>Explorer</strong><small>Latihan logika lebih jauh</small></span></button>
+          <button class="level-choice" data-level="builder" type="button"><span class="level-icon">3</span><span><strong>Builder</strong><small>Bangun proyek interaktif</small></span></button>
+        </div>
+        <button class="button button-primary level-start" id="startLevel" data-level="beginner" type="button">Mulai level Beginner →</button>
+      </section>
+
+      <section class="language-gate is-hidden" id="languageGate">
+        <div class="level-gate-copy">
+          <span class="eyebrow" id="languageGateEyebrow">Level Newbie</span>
+          <h1>Pilih bahasa coding</h1>
+          <p>Pilih bahasa yang ingin kamu pelajari. Setiap jalur punya contoh kode dan latihan yang berbeda.</p>
+        </div>
+        <div class="language-choice-grid" id="languageChoices"></div>
+        <div style="display:flex;gap:12px;justify-content:center;margin-top:20px;flex-wrap:wrap">
+          <button class="button button-light" id="backLevelFromLanguage" type="button">← Pilih Level Lain</button>
+          <button class="button button-primary level-start" id="startLanguage" type="button" disabled>Mulai belajar →</button>
+        </div>
+      </section>
+
+    <section class="lesson-shell is-hidden" id="lessonShell">
+      <aside class="module-sidebar">
+        <div class="sidebar-intro">
+          <span class="eyebrow" id="sidebarEyebrow">Level Newbie</span>
+          <h1>Jalur belajar</h1>
+          <p>Ikuti langkahnya, pecahkan masalahnya, lalu buktikan skill-mu.</p>
+        </div>
+        <div class="module-list" id="moduleList"></div>
+        <div class="xp-panel"><span>XP terkumpul</span><strong id="xpText">0 XP</strong><div class="xp-track"><i id="xpBar"></i></div></div>
+      </aside>
+
+      <section class="lesson-content">
+        <div class="lesson-path-nav">
+          <button class="text-nav-btn" id="changeLanguageBtn" type="button">← Ganti Bahasa</button>
+          <span class="nav-sep">·</span>
+          <button class="text-nav-btn" id="changeLevelBtn" type="button">← Ganti Level</button>
+        </div>
+
+        <div class="lesson-topline">
+          <div><span class="eyebrow" id="moduleEyebrow">Modul 1 · Fondasi</span><h2 id="moduleTitle">Kenalan dengan HTML</h2><p id="moduleSummary">Bangun kerangka halaman web dengan tag yang tepat.</p></div>
+          <div class="lesson-counter"><strong id="progressText">1/3</strong><span>modul</span></div>
+        </div>
+
+        <div class="module-dropdown-wrap" id="moduleDropdownWrap">
+          <button class="module-dropdown-trigger" id="moduleDropdownTrigger" type="button" aria-haspopup="true">
+            <span class="dropdown-trigger-icon">📖</span>
+            <span class="dropdown-trigger-text" id="dropdownTriggerText">Daftar Modul (1/14)</span>
+            <span class="dropdown-trigger-arrow">▾</span>
+          </button>
+          <div class="module-dropdown-menu" id="moduleDropdownMenu">
+            <div class="module-dropdown-header">
+              <strong>Daftar Modul Pembelajaran</strong>
+              <small id="dropdownUnlockedCount">Terbuka: 1/14</small>
+            </div>
+            <div class="module-dropdown-items" id="moduleDropdownItems"></div>
+          </div>
+        </div>
+
+        <section class="lesson-card concept-card" aria-live="polite">
+          <div class="card-heading"><div><span class="section-label">01 · Animasi materi</span><h3 id="conceptTitle">HTML itu seperti kerangka rumah</h3></div><button class="icon-button" id="playButton" type="button" aria-label="Putar contoh kode">▶</button></div>
+          <div class="code-stage" id="animationStage"><div class="code-window"><div class="code-window-top"><span></span><span></span><span></span><b>contoh-kode</b></div><pre id="codeExample"></pre></div><div class="stage-caption" id="stageCaption">Klik play untuk melihat kode ditulis.</div></div>
+          <div class="step-dots" id="stepDots"></div>
+          <p class="concept-copy" id="conceptCopy">Tag HTML memberi tahu browser bagian apa yang sedang kita buat. Mulai dari struktur paling sederhana.</p>
+          <div class="explanation-list" id="codeExplanation"></div>
+        </section>
+
+        <section class="lesson-card practice-card">
+          <div class="card-heading"><div><span class="section-label">02 · Problem solving</span><h3 id="practiceTitle">Susun struktur halaman</h3></div><span class="score-pill" id="practiceStatus">Belum dicoba</span></div>
+          <p id="practiceQuestion">Coba ketik ulang contoh kode di atas berdasarkan materi yang baru kamu pelajari.</p>
+          <div class="editor-wrap"><label for="codeEditor">Tulis kodenya di sini</label><textarea id="codeEditor" spellcheck="false" placeholder="Ketik contoh kode di sini..."></textarea><button class="button button-primary" id="checkCode" type="button">Periksa kode</button><p class="feedback" id="codeFeedback" role="status"></p></div>
+          <div class="quiz-divider"><span>Quiz kecil</span></div>
+          <p class="quiz-question" id="quizQuestion"></p>
+          <div class="answer-grid" id="practiceAnswers"></div>
+          <p class="feedback" id="practiceFeedback" role="status"></p>
+        </section>
+
+        <section class="challenge-card">
+          <div class="challenge-copy"><span class="section-label">03 · Mini challenge</span><h3 id="challengeTitle">Bangun kartu profil</h3><p id="challengeDescription">Gunakan konsep HTML untuk memilih tiga bagian yang wajib ada dalam kartu profil sederhana.</p><span class="challenge-reward">✦ +50 XP</span></div>
+          <div class="challenge-workspace"><div class="choice-list" id="challengeChoices"></div><button class="button button-dark" id="checkChallenge" type="button">Periksa jawaban</button><p class="feedback challenge-feedback" id="challengeFeedback" role="status"></p></div>
+        </section>
+
+        <div class="lesson-navigation"><button class="button button-light" id="previousModule" type="button">← Sebelumnya</button><button class="button button-primary" id="nextModule" type="button" disabled>Modul berikutnya →</button></div>
+      </section>
+    </section>
+    </main>
+    <script src="achievements.js"></script>
+    <script src="pelajaran.js"></script>
+  </body>
+</html>

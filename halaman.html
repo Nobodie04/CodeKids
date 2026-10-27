@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeKids Academy</title>
+    <meta
+      name="description"
+      content="Platform belajar coding dari dasar dengan berbagai bahasa, level, dan latihan yang seru untuk anak sekolah."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <div class="brand" aria-label="CodeKids logo">
+          <div class="brand-mark">C</div>
+          <span>CodeKids</span>
+        </div>
+
+        <nav class="main-nav" id="mainNav">
+          <a href="#beranda">Beranda</a>
+          <a href="#bahasa">Bahasa</a>
+          <a href="#tingkat">Level</a>
+          <a href="#progres">Progres</a>
+          <a href="#latihan">Latihan</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <a href="akun.html" class="button button-primary nav-cta" id="startLearning">Mulai Belajar</a>
+        <a href="akun.html" class="profile-avatar hidden" id="profileAvatar" aria-label="Buka profil"></a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="beranda">
+        <!-- 1. GUEST HERO (Default untuk pengunjung belum login) -->
+        <div class="container hero-grid" id="guestHero">
+          <div class="hero-copy">
+            <span class="badge">Belajar sambil bermain</span>
+            <h1>Jadilah kreator masa depan dengan coding.</h1>
+            <p>
+              Platform belajar coding dari dasar untuk anak sekolah. Pilih bahasa favoritmu,
+              kuasai tiap level, dan selesaikan latihan yang bikin rasa ingin tahu makin besar.
+            </p>
+            <div class="cta-row">
+              <a href="#bahasa" class="button button-primary">Lihat Bahasa</a>
+              <a href="#tingkat" class="button button-secondary">Cek Level</a>
+            </div>
+
+            <div class="stats-row">
+              <div>
+                <strong>12K+</strong>
+                <span>Siswa aktif</span>
+              </div>
+              <div>
+                <strong>45+</strong>
+                <span>Modul belajar</span>
+              </div>
+              <div>
+                <strong>4.9/5</strong>
+                <span>Rating</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="Ilustrasi belajar coding">
+            <div class="window-card">
+              <div class="window-top">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="code-display">
+                <div class="line"><span class="key">print</span>(<span class="value">"Hello, future!"</span>)</div>
+                <div class="line"><span class="key">for</span> i <span class="key">in</span> <span class="value">range</span>(3):</div>
+                <div class="line indent"><span class="key">print</span>(<span class="value">"Learn & Build"</span>)</div>
+              </div>
+            </div>
+
+            <div class="floating-card xp-card">
+              <span class="mini-label">XP Hari Ini</span>
+              <strong>350 XP</strong>
+              <div class="progress-track">
+                <span style="width: 72%"></span>
+              </div>
+            </div>
+
+            <div class="floating-card badge-card">
+              <span class="spark">⭐</span>
+              <strong>Beginner Hero</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. PERSONALIZED STUDENT HERO (Tampil khusus untuk pengguna login) -->
+        <div class="container hero-grid" id="studentHero" style="display:none">
+          <div class="hero-copy">
+            <span class="badge" id="studentGreetingBadge">👋 Semangat Belajar</span>
+            <h1 id="studentGreetingTitle">Halo, Sobat Coder!</h1>
+            <p id="studentHeroSubtext">
+              Siap melanjutkan petualangan codingmu hari ini? Kuasai materi baru, kumpulkan XP, dan raih lencana terbaik!
+            </p>
+
+            <!-- Resume Learning Card / Ajakan Belajar Card -->
+            <div class="resume-learning-card" id="resumeLearningCard">
+              <div class="resume-card-header">
+                <span class="pill-tag" id="resumeLangLevelBadge">HTML · Beginner</span>
+                <span class="resume-status-pill" id="resumeStatusPill">📍 Terakhir Dipelajari</span>
+              </div>
+              <h3 id="resumeModuleTitle">Modul 1: Apa itu HTML?</h3>
+              <p class="muted" id="resumeModuleDesc">Lanjutkan langkah belajarmu untuk menyelesaikan level ini.</p>
+              <div class="resume-action-row" id="resumeActionRow">
+                <a href="pelajaran.html" class="button button-primary" id="resumeLearningBtn">
+                  🚀 Lanjut Belajar Sekarang →
+                </a>
+              </div>
+            </div>
+
+            <!-- Quick Stats Bar (XP, Streak, Modul Selesai) -->
+            <div class="stats-row" style="margin-top:24px">
+              <div>
+                <strong id="studentHeroXp">0 XP</strong>
+                <span id="studentHeroBadgeTier">Rookie Coder</span>
+              </div>
+              <div>
+                <strong id="studentHeroStreak">🔥 0 Hari</strong>
+                <span id="studentHeroStreakStatus">Belum belajar</span>
+              </div>
+              <div>
+                <strong id="studentHeroCompletedCount">0 Modul</strong>
+                <span>Telah selesai</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="Ringkasan Belajar Siswa">
+            <!-- Streak Tracker Card -->
+            <div class="streak-hero-card" id="streakHeroCard">
+              <div class="streak-hero-head">
+                <span class="streak-flame-icon">🔥</span>
+                <div>
+                  <h4>Streak Belajar Harian</h4>
+                  <small id="streakTodayStatusText">Status hari ini: Belum belajar</small>
+                </div>
+              </div>
+              <div class="streak-hero-metrics">
+                <div class="streak-metric">
+                  <span class="num" id="streakCurrentDays">0</span>
+                  <span class="lbl">Hari Berjalan</span>
+                </div>
+                <div class="streak-metric-divider"></div>
+                <div class="streak-metric">
+                  <span class="num" id="streakLongestDays">0</span>
+                  <span class="lbl">Rekor Terbaik</span>
+                </div>
+              </div>
+              <div class="streak-footer-note">
+                <span>⏱️ Zona Waktu: WITA (Asia/Makassar)</span>
+              </div>
+            </div>
+
+            <!-- XP & Rank Floating Card -->
+            <div class="floating-card xp-card student-xp-card">
+              <span class="mini-label" id="studentCardRankLabel">Pangkat Saat Ini</span>
+              <strong id="studentCardRankTitle">🌱 Rookie Coder</strong>
+              <div class="progress-track">
+                <span id="studentCardXpBar" style="width: 0%"></span>
+              </div>
+              <small id="studentCardXpNext" style="display:block;margin-top:6px;font-size:0.75rem;color:var(--muted)">0 XP terkumpul</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-strip">
+        <div class="container feature-grid">
+          <div class="feature-item">
+            <span>🎯</span>
+            <p>Belajar langkah demi langkah</p>
+          </div>
+          <div class="feature-item">
+            <span>🧠</span>
+            <p>Latihan interaktif dan menyenangkan</p>
+          </div>
+          <div class="feature-item">
+            <span>🚀</span>
+            <p>Bangun proyek mini yang nyata</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="bahasa">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">Pilihan bahasa</span>
+            <h2>Pilih jalan coding yang cocok untukmu</h2>
+          </div>
+
+          <div class="filter-group" aria-label="Filter bahasa">
+            <button class="filter-button active" data-filter="all">Semua</button>
+            <button class="filter-button" data-filter="web">Web</button>
+            <button class="filter-button" data-filter="logic">Logic</button>
+            <button class="filter-button" data-filter="apps">Apps</button>
+          </div>
+
+          <div class="language-grid">
+            <article class="language-card" data-category="web">
+              <div class="language-head">
+                <span class="lang-icon html" aria-label="Logo HTML5">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none"><path d="M4 3l1.6 18 6.4 2 6.4-2L20 3H4z" fill="#E44D26"/><path d="M12 4.8v16.4l4.9-1.5L18.3 4.8H12z" fill="#F16529"/><path d="M8 8h8l-.3 3.5H9.2l.2 2.5h6.3l-.6 6-3.1 1-3.1-1-.2-2.5h-2l.4 4.5 4.9 1.5 4.9-1.5 1-11.5H8V8z" fill="#fff"/></svg>
+                </span>
+                <div>
+                  <h3>HTML</h3>
+                  <p>Struktur web</p>
+                </div>
+              </div>
+              <p>Belajar membuat kerangka halaman seperti judul, tombol, dan formulir.</p>
+              <ul>
+                <li>Tag dasar</li>
+                <li>Form & input</li>
+                <li>Halaman sederhana</li>
+              </ul>
+              <a href="pelajaran.html?bahasa=html" class="text-link">Mulai level 1 →</a>
+            </article>
+
+            <article class="language-card" data-category="web">
+              <div class="language-head">
+                <span class="lang-icon css" aria-label="Logo CSS3">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none"><path d="M4 3l1.6 18 6.4 2 6.4-2L20 3H4z" fill="#1572B6"/><path d="M12 4.8v16.4l4.9-1.5L18.3 4.8H12z" fill="#33A9DC"/><path d="M8 8h8l-.3 3.5H9.2l.2 2.5h6.3l-.6 6-3.1 1-3.1-1-.2-2.5h-2l.4 4.5 4.9 1.5 4.9-1.5 1-11.5H8V8z" fill="#fff"/></svg>
+                </span>
+                <div>
+                  <h3>CSS</h3>
+                  <p>Desain tampilan</p>
+                </div>
+              </div>
+              <p>Menambahkan warna, ukuran, layout, dan efek agar web terlihat keren.</p>
+              <ul>
+                <li>Warna & font</li>
+                <li>Flexbox & Grid</li>
+                <li>Animasi ringan</li>
+              </ul>
+              <a href="pelajaran.html?bahasa=css" class="text-link">Mulai level 1 →</a>
+            </article>
+
+            <article class="language-card" data-category="web">
+              <div class="language-head">
+                <span class="lang-icon js" aria-label="Logo JavaScript">
+                  <svg viewBox="0 0 24 24" width="28" height="28"><rect width="24" height="24" rx="4" fill="#F7DF1E"/><path d="M7 16.5c.5.8 1.2 1.3 2.1 1.3 1 0 1.6-.5 1.6-1.5v-6H9.2v6c0 .3-.1.5-.4.5-.3 0-.5-.2-.7-.5L7 16.5zm6.5-.2c.6 1 1.5 1.5 2.6 1.5 1.5 0 2.4-.8 2.4-2 0-1.2-.8-1.7-2-2.2l-.4-.2c-.7-.3-1-.6-1-1.1 0-.5.4-.9 1.1-.9.6 0 1 .3 1.4.8l1.1-.8c-.6-.9-1.4-1.3-2.5-1.3-1.4 0-2.3.8-2.3 2 0 1.1.7 1.6 1.8 2.1l.4.2c.8.3 1.2.7 1.2 1.3 0 .6-.5 1-1.3 1-.8 0-1.3-.4-1.7-1.1l-1.2.7z" fill="#000"/></svg>
+                </span>
+                <div>
+                  <h3>JavaScript</h3>
+                  <p>Interaksi user</p>
+                </div>
+              </div>
+              <p>Buat tombol bergerak, menu interaktif, dan logika untuk website.</p>
+              <ul>
+                <li>Variabel</li>
+                <li>Fungsi</li>
+                <li>DOM & event</li>
+              </ul>
+              <a href="pelajaran.html?bahasa=javascript" class="text-link">Mulai level 1 →</a>
+            </article>
+
+            <article class="language-card" data-category="logic">
+              <div class="language-head">
+                <span class="lang-icon py" aria-label="Logo Python">
+                  <svg viewBox="0 0 24 24" width="28" height="28"><path d="M11.9 2c-3.1 0-2.9 1.3-2.9 1.3l.1 1.4h3v.4H6.3S4 4.8 4 8c0 3.2 2 3.1 2 3.1h1.2v-1.7c0-1.9 1.7-1.8 1.7-1.8h2.9c1.6 0 1.6-1.5 1.6-1.5V3.5S13.6 2 11.9 2zm-1.6 1a.7.7 0 1 1 0 1.4.7.7 0 0 1 0-1.4z" fill="#3776AB"/><path d="M12.1 22c3.1 0 2.9-1.3 2.9-1.3l-.1-1.4h-3v-.4h5.8s2.3.3 2.3-2.9c0-3.2-2-3.1-2-3.1h-1.2v1.7c0 1.9-1.7 1.8-1.7 1.8H12.2c-1.6 0-1.6 1.5-1.6 1.5v2.6s-.2 1.5 1.5 1.5zm1.6-1a.7.7 0 1 1 0-1.4.7.7 0 0 1 0 1.4z" fill="#FFD438"/></svg>
+                </span>
+                <div>
+                  <h3>Python</h3>
+                  <p>Pemrograman dasar</p>
+                </div>
+              </div>
+              <p>Belajar cara berpikir logis lewat kode yang gampang dibaca dan seru.</p>
+              <ul>
+                <li>Input & output</li>
+                <li>Loop & condition</li>
+                <li>Mini projek</li>
+              </ul>
+              <a href="pelajaran.html?bahasa=python" class="text-link">Mulai level 1 →</a>
+            </article>
+
+            <article class="language-card" data-category="apps">
+              <div class="language-head">
+                <span class="lang-icon cpp" aria-label="Logo C++">
+                  <svg viewBox="0 0 24 24" width="28" height="28"><polygon points="12,2 21,7 21,17 12,22 3,17 3,7" fill="#00599C"/><text x="12" y="15" fill="#fff" font-family="Inter,sans-serif" font-weight="900" font-size="8" text-anchor="middle">C++</text></svg>
+                </span>
+                <div>
+                  <h3>C++</h3>
+                  <p>Fondasi logika</p>
+                </div>
+              </div>
+              <p>Memahami struktur program, fungsi, dan algoritma dengan bahasa kuat.</p>
+              <ul>
+                <li>Variabel & tipe data</li>
+                <li>Function</li>
+                <li>Loop & array</li>
+              </ul>
+              <a href="pelajaran.html?bahasa=cpp" class="text-link">Mulai level 1 →</a>
+            </article>
+
+            <article class="language-card" data-category="logic">
+              <div class="language-head">
+                <span class="lang-icon scratch" aria-label="Logo Scratch">
+                  <svg viewBox="0 0 24 24" width="28" height="28"><rect width="24" height="24" rx="6" fill="#F49C25"/><path d="M12 4C7.6 4 4 7.6 4 12c0 2.2.9 4.2 2.3 5.7L12 12V4zm0 16c4.4 0 8-3.6 8-8 0-2.2-.9-4.2-2.3-5.7L12 12v8z" fill="#FFB84D"/><circle cx="12" cy="12" r="3.5" fill="#fff"/></svg>
+                </span>
+                <div>
+                  <h3>Scratch</h3>
+                  <p>Visual coding</p>
+                </div>
+              </div>
+              <p>Belajar logika pemrograman dengan blok yang mudah dipahami anak-anak.</p>
+              <ul>
+                <li>Event & script</li>
+                <li>Sprite</li>
+                <li>Game sederhana</li>
+              </ul>
+              <a href="pelajaran.html?bahasa=scratch" class="text-link">Mulai level 1 →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section level-section" id="tingkat">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">Level perjalanan</span>
+            <h2>Naik level sambil menambah skill</h2>
+          </div>
+
+          <div class="level-grid">
+            <div class="level-card level-one">
+              <div class="level-badge">Level 1</div>
+              <h3>Beginner</h3>
+              <p>Pengenalan konsep dasar, tipe data, dan cara membaca kode.</p>
+              <ul>
+                <li>5 modul</li>
+                <li>3 latihan</li>
+                <li>1 mini challenge</li>
+              </ul>
+              <a class="button button-primary" href="pelajaran.html?level=beginner">Masuk Level</a>
+            </div>
+
+            <div class="level-card level-two">
+              <div class="level-badge">Level 2</div>
+              <h3>Explorer</h3>
+              <p>Mulai logika pemrograman, loop, serta membangun program kecil.</p>
+              <ul>
+                <li>7 modul</li>
+                <li>5 latihan</li>
+                <li>2 mini proyek</li>
+              </ul>
+              <a class="button button-primary" href="pelajaran.html?level=explorer">Masuk Level</a>
+            </div>
+
+            <div class="level-card level-three">
+              <div class="level-badge">Level 3</div>
+              <h3>Builder</h3>
+              <p>Menggabungkan konsep untuk membuat aplikasi sederhana dan interaktif.</p>
+              <ul>
+                <li>9 modul</li>
+                <li>7 latihan</li>
+                <li>3 proyek nyata</li>
+              </ul>
+              <a class="button button-primary" href="pelajaran.html?level=builder">Masuk Level</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section progress-section" id="progres">
+        <div class="container progress-layout">
+          <div class="journey-card">
+            <span class="eyebrow">Jalan belajarmu</span>
+            <h2>Progress hari ini</h2>
+            <div class="stat-rows">
+              <div class="stat-item">
+                <span class="stat-label">Modul selesai</span>
+                <strong id="completedModules">0/0</strong>
+                <div class="mini-bar"><span id="completedModulesBar" style="width: 0%"></span></div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Latihan hari ini</span>
+                <strong id="learningProgress">0%</strong>
+                <div class="mini-bar"><span id="learningProgressBar" style="width: 0%"></span></div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Poin badge</span>
+                <strong id="achievementPoints">0 XP</strong>
+                <div class="mini-bar"><span id="achievementPointsBar" style="width: 0%"></span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="achievement-card">
+            <span class="eyebrow accent">Achievement</span>
+            <h3>Prestasi terbaru</h3>
+            <div class="badge-list" id="achievementList"></div>
+            <div id="xpBadgeContainer" class="xp-badge-home"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section exercise-section" id="latihan">
+        <div class="container exercise-layout">
+          <div class="exercise-copy">
+            <span class="eyebrow">Latihan hari ini</span>
+            <h2>Uji kemampuanmu dengan soal yang bikin penasaran</h2>
+            <p>Setiap latihan dibuat untuk melatih logika, kreativitas, dan strategi berpikir dengan cara yang fun.</p>
+            <div class="mini-progress">
+              <div>
+                <strong id="exerciseProgress">0%</strong>
+                <span>Progress belajar</span>
+              </div>
+              <div>
+                <strong id="quizCount">0</strong>
+                <span>Kuis selesai</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="quiz-card" aria-live="polite">
+            <div class="quiz-header">
+              <span class="quiz-tag">Quiz coding</span>
+              <span class="quiz-score" id="scoreText">Skor: 0</span>
+            </div>
+
+            <h3 id="questionText">Apa fungsi dari variabel dalam program?</h3>
+            <div class="answer-list" id="answerList">
+              <button class="answer-button" data-correct="true">Menyimpan data untuk dipakai lagi</button>
+              <button class="answer-button">Membuat halaman lebih lapang</button>
+              <button class="answer-button">Menghapus kode lama</button>
+              <button class="answer-button">Menjalankan semua perintah sekaligus</button>
+            </div>
+
+            <div class="quiz-footer">
+              <button class="button button-secondary" id="nextQuestion">Pertanyaan berikutnya</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section faq-section" id="faq">
+        <div class="container">
+          <div class="section-heading narrow">
+            <span class="eyebrow">Pertanyaan umum</span>
+            <h2>Yang sering ditanya siswa baru</h2>
+          </div>
+
+          <div class="faq-list">
+            <div class="faq-item open">
+              <h3>Apakah cocok untuk pemula?</h3>
+              <p>Ya. Semua materi dimulai dari dasar dan dijelaskan dengan bahasa yang mudah dipahami.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Apakah bisa belajar dari ponsel?</h3>
+              <p>Tentu. Website ini dirancang responsif agar bisa dibuka di laptop, tablet, maupun hp.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Apakah ada latihan setelah belajar?</h3>
+              <p>Setiap modul disertai latihan singkat dan tantangan kecil untuk mengukur pemahaman.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <div>
+          <div class="brand footer-brand">
+            <div class="brand-mark">C</div>
+            <span>CodeKids</span>
+          </div>
+          <p>Belajar coding dari dasar, dengan semangat, kreativitas, dan rasa ingin tahu.</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#bahasa">Bahasa</a>
+          <a href="#tingkat">Level</a>
+          <a href="#latihan">Latihan</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="achievements.js"></script>
+    <script src="java.js"></script>
+  </body>
+</html>
